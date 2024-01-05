@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Blinding virus</title>
+    <meta name="description" content="Blinding virus that made for fun" />
+    <meta name="og:title" content="Blinding virus" />
+    <meta name="og:url" content="useless-hazel.vercel.app" />
+    <meta name="og:description" content="Blinding virus that made for fun" />
+    <meta name="og:image" content="https://media.npr.org/assets/img/2013/09/27/ap100906123185-1--a71cfdc14c11774e65d68df3e5e3580b71277885-s1100-c50.jpg" />
     <style>
       body {
         margin: 0;
@@ -12,6 +17,20 @@
   </head>
   <body>
     <script>
+      var elem = document.documentElement;
+
+      /* View in fullscreen */
+      function openFullscreen() {
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+          /* Safari */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          /* IE11 */
+          elem.msRequestFullscreen();
+        }
+      }
       const getRandomNumber = () => {
         return Math.floor(Math.random() * 256);
       };
@@ -19,6 +38,7 @@
 
       setInterval(() => {
         body.style.backgroundColor = `rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()})`;
+        openFullscreen();
       }, 1);
     </script>
   </body>
